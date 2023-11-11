@@ -8,9 +8,8 @@ function login(event) {
     // Perform authentication logic (e.g., check credentials)
     // For simplicity, you can add a basic check here
     if (username != '' && password !== '') {
-        alert('Login successful! Redirecting to the homhhhe page.');
-        console.log('hiii')
-        window.location.href = 'index.html';
+        alert('Login successful! Redirecting to the home page.');
+        window.location.href = 'home.html';
     } else {
         alert('Invalid credentials. Please try again.');
     }
