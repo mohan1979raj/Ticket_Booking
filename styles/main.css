@@ -1,19 +1,185 @@
+/* styles/main.css */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+h1, h2 {
     text-align: center;
 }
 
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
     cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+/* styles/main.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.app-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.app-bar h1 {
+    margin: 0;
+}
+
+#user-info {
+    font-weight: bold;
+}
+
+button {
+    background-color: #fff;
+    color: #4caf50;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+/* styles/main.css */
+
+/* Add styles as needed for the reservation form */
+.reservation-form {
+    margin-top: 20px;
+}
+
+.reservation-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.reservation-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.reservation-form button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.reservation-form button:hover {
+    background-color: #45a049;
+}
+.full-width {
+    width: 100%;
+    height: 40px;
+}
+#train-list {
+    margin-top: 20px;
+}
+
+.train-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.train-item p {
+    margin: 0;
+}
+
+.train-item button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.train-item button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.train-item button:hover:disabled {
+    background-color: #ccc;
 }

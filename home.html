@@ -3,13 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
-<div class="container">
-   welcome onboard
+<div id="app" class="">
+    <div class="app-bar">
+        <h1>Welcome to the Ticket Reservation Page!</h1>
+        <div id="user-info"></div>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <div id="app" class="container">
+        <div class="reservation-form">
+            <h2>Rail Reservation</h2>
+            <label for="from">From:</label>
+            <select id="from" class="full-width" required>
+                <option value="">Select District</option>
+                <option value="district1">District 1</option>
+                <option value="district2">District 2</option>
+                <!-- Add more districts as needed -->
+            </select>
+        
+            <label for="to">To:</label>
+            <select id="to" class="full-width" required>
+                <option value="">Select District</option>
+                <option value="district1">District 1</option>
+                <option value="district2">District 2</option>
+                <!-- Add more districts as needed -->
+            </select>
+    
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+    
+            <button onclick="filterTrains()">Filter Trains</button>
+    
+            <div id="train-list"></div>
+    
+    <!-- ... (your existing code) ... -->
+
+<div class="reservation-form">
+    <!-- ... (your existing code) ... -->
+    <div id="passenger-form" style="display: none;">
+        <h3>Passenger Details:</h3>
+        <label for="passenger-name">Name:</label>
+        <input type="text" id="passenger-name" required>
+
+        <label for="passenger-age">Age:</label>
+        <input type="number" id="passenger-age" required>
+
+        <button onclick="bookTicket()" id="book-ticket-btn" disabled>Book Ticket</button>
+    </div>
 </div>
+
+<!-- ... (your existing code) ... -->
+
+        </div>
+    </div>
+    
+</div>
+
+<script src="scripts/auth.js"></script>
+
 </body>
 </html>

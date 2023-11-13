@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        .ticket-card {
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-details {
+            margin-bottom: 20px;
+        }
+
+        .ticket-details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-card">
+        <h2>Ticket Details</h2>
+        <div class="ticket-details" id="ticket-details">
+            <!-- Ticket details will be dynamically added here -->
+        </div>
+        <button onclick="printTicket()">Print Ticket</button>
+    </div>
+
+    <script>
+     document.addEventListener('DOMContentLoaded', function () {
+        // Extract ticket details from localStorage and display on the ticket card
+        const ticketDetails = JSON.parse(localStorage.getItem('ticketDetails'));
+        if (ticketDetails) {
+            const ticketDetailsContainer = document.getElementById('ticket-details');
+            ticketDetailsContainer.innerHTML = `
+                <p>Booking ID: ${ticketDetails.bookingId}</p>
+                <p>Train: ${ticketDetails.trainName} (${ticketDetails.trainNumber})</p>
+                <p>From: ${ticketDetails.from}</p>
+                <p>To: ${ticketDetails.to}</p>
+                <p>Date: ${ticketDetails.date}</p>
+                <p>Passenger: ${ticketDetails.passengerName} (Age: ${ticketDetails.passengerAge})</p>
+            `;
+        }
+    });
+
+    function printTicket() {
+        window.print();
+    }
+    </script>
+</body>
+</html>
