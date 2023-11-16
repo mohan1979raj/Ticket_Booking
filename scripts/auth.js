@@ -13,6 +13,26 @@ function signup(event) {
     window.location.href = 'index.html';
 }
 
+function getCurrentDate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function getNextDay() {
+    const now = new Date();
+    now.setDate(now.getDate() + 1);
+
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+}
+
+
 function login(event) {
     event.preventDefault();
 
@@ -57,12 +77,12 @@ document.addEventListener('DOMContentLoaded', displayUserInfo);
 
 // Assume you have a sample list of trains in JSON format
 const trainData = [
-    { name: 'Express 101', number: 'E101', from: 'district1', to: 'district2', date: '2023-12-01', selected: false },
-    { name: 'Superfast 202', number: 'SF202', from: 'district2', to: 'district1', date: '2023-12-02', selected: false },
-    { name: 'Local 303', number: 'L303', from: 'district1', to: 'district3', date: '2023-12-03', selected: false },
-    { name: 'Express 101', number: 'E101', from: 'district2', to: 'district1ßß', date: '2023-12-02', selected: false },
-    { name: 'Superfast 202', number: 'SF202', from: 'district2', to: 'district1', date: '2023-12-01', selected: false },
-    { name: 'Local 303', number: 'L303', from: 'district1', to: 'district3', date: '2023-12-02', selected: false },
+    { name: 'Express 101', number: 'E101', from: 'district1', to: 'district2', date:getCurrentDate() , selected: false },
+    { name: 'Superfast 202', number: 'SF202', from: 'district2', to: 'district1', date: getCurrentDate(), selected: false },
+    { name: 'Local 303', number: 'L303', from: 'district1', to: 'district3', date: getCurrentDate(), selected: false },
+    { name: 'Express 101', number: 'E101', from: 'district2', to: 'district1', date: getCurrentDate(), selected: false },
+    { name: 'Superfast 202', number: 'SF202', from: 'district2', to: 'district1', date: getCurrentDate(), selected: false },
+    { name: 'Intercity 322', number: 'L303', from: 'district1', to: 'district3', date: getCurrentDate(), selected: false },
     // ... Add more trains as needed
 ];
 
